@@ -1,30 +1,8 @@
 import React from "react";
 import UserCard from "./UserCard";
+import { users } from "./Services"; 
 
 function Exercise() {
-  const users = [
-    {
-      name: "April",
-      email: "april@gmail.com",
-      street: "Jl. Indraprasta",
-      city: "Semarang",
-      age: 25,
-      job: "Web Developer", 
-    },
-    {
-      name: "Yani",
-      email: "yani@gmail.com",
-      street: "Jl. Imam Bonjol",
-      city: "Ungaran",
-    },
-    {
-      name: "Safitri",
-      email: "safitri@gmail.com",
-      street: "Jl. Pemuda",
-      city: "Kendal",
-    },
-  ];
-
   return (
     <>
       <div className="min-h-screen bg-gray-100 p-6">
