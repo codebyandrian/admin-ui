@@ -2,13 +2,30 @@ import React from "react";
 import UserCard from "./UserCard";
 
 function Exercise() {
-  const users = {
-    name: "April",
-    email: "april@gmail.com",
-    street: "Jl. Indraprasta",
-    city: "Semarang",
-    age: 25,
-  };
+  const users = [
+    {
+      name: "April",
+      email: "april@gmail.com",
+      street: "Jl. Indraprasta",
+      city: "Semarang",
+      age: 25,
+    },
+    {
+      name: "Yani",
+      email: "yani@gmail.com",
+      street: "Jl. Imam Bonjol",
+      city: "Ungaran",
+    },
+    {
+      name: "Safitri",
+      email: "safitri@gmail.com",
+      street: "Jl. Pemuda",
+      city: "Kendal",
+    },
+  ];
+
+  // Menyaring user yang kota-nya bukan "Semarang"
+  const nonSemarangUsers = users.filter((user) => user.city !== "Semarang");
 
   return (
     <>
@@ -17,19 +34,9 @@ function Exercise() {
           User Cards
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <UserCard {...users} />
-          <UserCard
-            name="Yani"
-            email="yani@gmail.com"
-            street="Jl. Indraprasta"
-            city="Ungaran"
-          />
-          <UserCard
-            name="Safitri"
-            email="safitri@gmail.com"
-            street="Jl. Pemuda"
-            city="Kendal"
-          />
+          {nonSemarangUsers.map((user, index) => (
+            <UserCard key={index} {...user} />
+          ))}
         </div>
       </div>
     </>
