@@ -24,9 +24,6 @@ function Exercise() {
     },
   ];
 
-  // Menyaring user yang kota-nya bukan "Semarang"
-  const nonSemarangUsers = users.filter((user) => user.city !== "Semarang");
-
   return (
     <>
       <div className="min-h-screen bg-gray-100 p-6">
@@ -34,7 +31,7 @@ function Exercise() {
           User Cards
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {nonSemarangUsers.map((user, index) => (
+          {users.map((user, index) => (
             <UserCard key={index} {...user} />
           ))}
         </div>
