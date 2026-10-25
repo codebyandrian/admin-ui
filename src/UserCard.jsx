@@ -28,3 +28,5 @@ function UserCard(props) {
 }
 
 export default UserCard;
+
+// Selesai latihan ES6 Part 1
