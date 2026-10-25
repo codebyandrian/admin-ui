@@ -1,14 +1,17 @@
 import React from "react";
 
-function UserCard() {
+function UserCard(props) {
+  // Destructuring object props
+  const { name, email, street, city } = props;
+
   return (
     <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
-      <h2 className="text-xl font-semibold text-gray-800 mb-2">-name-</h2>
+      <h2 className="text-xl font-semibold text-gray-800 mb-2">{name}</h2>
       <p className="text-gray-600">
-        <span className="font-medium">Email:</span> -email-
+        <span className="font-medium">Email:</span> {email}
       </p>
       <p className="text-gray-600">
-        <span className="font-medium">Address:</span> -street-, -city-
+        <span className="font-medium">Address:</span> {street}, {city}
       </p>
     </div>
   );
