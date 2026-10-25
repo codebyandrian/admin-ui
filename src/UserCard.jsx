@@ -13,8 +13,12 @@ function UserCard(props) {
       <p className="text-gray-600">
         <span className="font-medium">Address:</span> {street}, {city}
       </p>
+
+      {/* Conditional rendering class dengan Template Literals */}
       <button
-        className="bg-gray-01 text-white p-2 rounded-md mt-4"
+        className={`${
+          clicked ? "bg-special-green" : "bg-gray-01"
+        } text-white p-2 rounded-md mt-4`}
         onClick={() => setClicked(true)}
       >
         {clicked ? "Tombol sudah diklik" : "Silakan Klik"}
