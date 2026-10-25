@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function UserCard(props) {
-  const { name, email, street, city } = props;
+  const { name, email, street, city, ...rest } = props;
   const [clicked, setClicked] = useState(false);
 
   return (
@@ -14,7 +14,12 @@ function UserCard(props) {
         <span className="font-medium">Address:</span> {street}, {city}
       </p>
 
-      {/* Conditional rendering class dengan Template Literals */}
+      {Object.entries(rest).map(([key, value]) => (
+        <p key={key} className="text-gray-600">
+          <span className="font-medium capitalize">{key}:</span> {value}
+        </p>
+      ))}
+
       <button
         className={`${
           clicked ? "bg-special-green" : "bg-gray-01"
@@ -28,5 +33,3 @@ function UserCard(props) {
 }
 
 export default UserCard;
-
-// Selesai latihan ES6 Part 1

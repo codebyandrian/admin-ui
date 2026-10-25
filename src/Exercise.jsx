@@ -9,6 +9,7 @@ function Exercise() {
       street: "Jl. Indraprasta",
       city: "Semarang",
       age: 25,
+      job: "Web Developer", 
     },
     {
       name: "Yani",
