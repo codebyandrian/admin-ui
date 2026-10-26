@@ -1,8 +1,14 @@
 import React from "react";
 import UserCard from "./UserCard";
-import { users } from "./Services"; 
+import { users, getUsers } from "./Services";
 
 function Exercise() {
+  getUsers()
+    .then((data) => console.log("Data dari API:", data))
+    .catch((error) =>
+      console.error("[Component] Gagal menampilkan data:", error.message)
+    );
+
   return (
     <>
       <div className="min-h-screen bg-gray-100 p-6">
