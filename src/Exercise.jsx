@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import UserCard from "./UserCard";
-import { users, getUsers } from "./Services";
+import { getUsers } from "./Services";
 
 function Exercise() {
-  getUsers()
-    .then((data) => console.log("Data dari API:", data))
-    .catch((error) =>
-      console.error("[Component] Gagal menampilkan data:", error.message)
-    );
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getUsers();
+        setUsers(data); 
+      } catch (error) {
+        console.error("[Component] Gagal menampilkan data:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []); 
 
   return (
     <>
